@@ -1,0 +1,39 @@
+{
+  "main": {
+    "name":"Damian Domzalski",
+    "description":"I am an open-minded and ambitious software engineer specializing in the Ruby ecosystem. In my approach to work, difficulties are challenges that I undertake with enthusiasm",
+    "image":"profilepic.jpg",
+    "bio":"I am an open-minded and ambitious software engineer specializing in the Ruby ecosystem. My professional experience and passion for tackling technological challenges have steered me towards aspiring to a team leader role, a position in which I already have some experience. I am keen to utilize and expand my expertise in Ruby on Rails, further driving my dynamic career progression. In my approach to work, difficulties are challenges that I undertake with enthusiasm. My entire professional experience involves remote work, making me an efficient and proven remote team member. Outside of work, I am an active sports enthusiast, with a fondness for swimming, basketball, and martial arts. While I appreciate the flexibility and freedom of remote work, I am always ready for occasional in-person brainstorming sessions or project sprints.",
+    "email": "contact@damiandomzalski.com",
+    "github":"https://github.com/damiandomzalski",
+    "project":"https://github.com/damiandomzalski",
+    "website": "http://www.damiandomzalski.com",
+    "social":[
+      {
+        "name":"facebook",
+        "url":"https://facebook.com/domzalskidamian",
+        "className":"fa fa-facebook"
+      },
+      {
+        "name":"twitter",
+        "url":"http://twitter.com/damiandomzalski",
+        "className":"fa fa-twitter"
+      },
+      {
+        "name":"linkedin",
+        "url":"https://www.linkedin.com/in/damiandomzalski/",
+        "className":"fa fa-linkedin"
+      },
+      {
+        "name":"instagram",
+        "url":"http://instagram.com/damiandomzalski",
+        "className":"fa fa-instagram"
+      },
+      {
+        "name":"github",
+        "url":"https://github.com/damiandomzalski",
+        "className":"fa fa-github"
+      }
+    ]
+  }
+}

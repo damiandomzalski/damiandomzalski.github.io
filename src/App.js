@@ -1,51 +1,41 @@
-import React, { Component } from "react";
-import ReactGA from "react-ga";
-import $ from "jquery";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./Components/Header";
-import Footer from "./Components/Footer";
 import About from "./Components/About";
+import Footer from "./Components/Footer";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      foo: "bar",
-      resumeData: {}
-    };
+function App() {
+  const [resumeData, setResumeData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    ReactGA.initialize("");
-    ReactGA.pageview(window.location.pathname);
-  }
+  useEffect(() => {
+    fetch(`${process.env.PUBLIC_URL}/resumeData.json`)
+      .then((response) => response.json())
+      .then((data) => {
+        setResumeData(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error loading resume data:", error);
+        setLoading(false);
+      });
+  }, []);
 
-  getResumeData() {
-    $.ajax({
-      url: "./resumeData.json",
-      dataType: "json",
-      cache: false,
-      success: function(data) {
-        this.setState({ resumeData: data });
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.log(err);
-        alert(err);
-      }
-    });
-  }
-
-  componentDidMount() {
-    this.getResumeData();
-  }
-
-  render() {
+  if (loading) {
     return (
-      <div className="App">
-        <Header data={this.state.resumeData.main} />
-        <About data={this.state.resumeData.main} />
-        <Footer data={this.state.resumeData.main} />
+      <div className="loading">
+        <div className="loading-spinner"></div>
       </div>
     );
   }
+
+  return (
+    <div className="App">
+      <Header data={resumeData?.main} />
+      <About data={resumeData?.main} />
+      <Footer data={resumeData?.main} />
+    </div>
+  );
 }
 
 export default App;

@@ -1,6 +1,6 @@
 {
-  "short_name": "Damian Domzalski Portfolio App",
-  "name": "Damian Domzalski Portfolio App",
+  "short_name": "Damian Domżalski",
+  "name": "Damian Domżalski - Software Engineer Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,8 +8,8 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0a0a0f",
+  "background_color": "#0a0a0f"
 }

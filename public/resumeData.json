@@ -1,39 +1,45 @@
 {
   "main": {
-    "name":"Damian Domzalski",
-    "description":"I am an open-minded and ambitious software engineer specializing in the Ruby ecosystem. In my approach to work, difficulties are challenges that I undertake with enthusiasm",
-    "image":"profilepic.jpg",
-    "bio":"I am an open-minded and ambitious software engineer specializing in the Ruby ecosystem. My professional experience and passion for tackling technological challenges have steered me towards aspiring to a team leader role, a position in which I already have some experience. I am keen to utilize and expand my expertise in Ruby on Rails, further driving my dynamic career progression. In my approach to work, difficulties are challenges that I undertake with enthusiasm. My entire professional experience involves remote work, making me an efficient and proven remote team member. Outside of work, I am an active sports enthusiast, with a fondness for swimming, basketball, and martial arts. While I appreciate the flexibility and freedom of remote work, I am always ready for occasional in-person brainstorming sessions or project sprints.",
+    "name": "Damian Domżalski",
+    "occupation": "Senior Software Engineer",
+    "description": "Building scalable solutions with Ruby on Rails. Currently crafting great products at MeasureStudio.",
+    "image": "profilepic.jpg",
+    "bio": "I'm a passionate software engineer with deep expertise in the Ruby ecosystem. At MeasureStudio, I build robust, scalable applications that make a real impact. My approach combines technical excellence with a genuine enthusiasm for solving complex problems. With years of remote work experience, I've mastered async communication and self-driven delivery while staying connected with distributed teams.",
     "email": "contact@damiandomzalski.com",
-    "github":"https://github.com/damiandomzalski",
-    "project":"https://github.com/damiandomzalski",
-    "website": "http://www.damiandomzalski.com",
-    "social":[
+    "phone": "",
+    "website": "https://damiandomzalski.com",
+    "location": "Poland",
+    "social": [
       {
-        "name":"facebook",
-        "url":"https://facebook.com/domzalskidamian",
-        "className":"fa fa-facebook"
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/damiandomzalski/",
+        "icon": "linkedin"
       },
       {
-        "name":"twitter",
-        "url":"http://twitter.com/damiandomzalski",
-        "className":"fa fa-twitter"
+        "name": "GitHub",
+        "url": "https://github.com/damiandomzalski",
+        "icon": "github"
       },
       {
-        "name":"linkedin",
-        "url":"https://www.linkedin.com/in/damiandomzalski/",
-        "className":"fa fa-linkedin"
+        "name": "Twitter",
+        "url": "https://twitter.com/damiandomzalski",
+        "icon": "twitter"
       },
       {
-        "name":"instagram",
-        "url":"http://instagram.com/damiandomzalski",
-        "className":"fa fa-instagram"
+        "name": "Instagram",
+        "url": "https://instagram.com/damiandomzalski",
+        "icon": "instagram"
       },
       {
-        "name":"github",
-        "url":"https://github.com/damiandomzalski",
-        "className":"fa fa-github"
+        "name": "Facebook",
+        "url": "https://facebook.com/domzalskidamian",
+        "icon": "facebook"
       }
+    ],
+    "highlights": [
+      "Ruby on Rails Expert",
+      "Remote Work Specialist",
+      "Team Leadership"
     ]
   }
 }

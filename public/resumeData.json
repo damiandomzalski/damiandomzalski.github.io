@@ -1,10 +1,10 @@
 {
   "main": {
     "name": "Damian Domżalski",
-    "occupation": "Senior Software Engineer",
-    "description": "Building scalable solutions with Ruby on Rails. Currently crafting great products at MeasureStudio.",
+    "occupation": "Senior Data & Software Engineer",
+    "description": "Engineering data intelligence at Measure Studio. Building AI products on the side.",
     "image": "profilepic.jpg",
-    "bio": "I'm a passionate software engineer with deep expertise in the Ruby ecosystem. At MeasureStudio, I build robust, scalable applications that make a real impact. My approach combines technical excellence with a genuine enthusiasm for solving complex problems. With years of remote work experience, I've mastered async communication and self-driven delivery while staying connected with distributed teams.",
+    "bio": "I'm a software engineer who thrives at the intersection of data and product. At Measure Studio, I build the data pipelines and application features that power social media intelligence for major brands. On the side, I founded FirstVibe.app — an AI-powered platform that turns selfies into honest vibe scores. I care about clean architecture, thoughtful APIs, and shipping things that people actually use.",
     "email": "contact@damiandomzalski.com",
     "phone": "",
     "website": "https://damiandomzalski.com",
@@ -37,9 +37,28 @@
       }
     ],
     "highlights": [
-      "Ruby on Rails Expert",
-      "Remote Work Specialist",
-      "Team Leadership"
+      "Data Engineering",
+      "Full-Stack Development",
+      "AI & Machine Learning",
+      "Founder & Builder"
+    ],
+    "projects": [
+      {
+        "title": "Measure Studio",
+        "role": "Senior Data & Software Engineer",
+        "url": "https://measure.studio",
+        "description": "Social media data intelligence platform trusted by top brands and agencies. I build data pipelines, analytics features, and the core application powering millions of data points daily.",
+        "tags": ["Data Pipelines", "Analytics", "Ruby on Rails", "React"],
+        "icon": "chart"
+      },
+      {
+        "title": "FirstVibe.app",
+        "role": "Founder",
+        "url": "https://firstvibe.app",
+        "description": "Upload a selfie, get your honest vibe score in 30 seconds. AI-powered selfie analysis platform I built from zero to launch.",
+        "tags": ["AI/ML", "Computer Vision", "Full-Stack", "Product"],
+        "icon": "sparkle"
+      }
     ]
   }
 }

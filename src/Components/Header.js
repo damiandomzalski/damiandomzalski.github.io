@@ -56,7 +56,7 @@ function Header({ data }) {
       </div>
 
       <div className="scroll-indicator">
-        <a href="#about">
+        <a href="#projects">
           <span>Scroll</span>
           <div className="scroll-arrow"></div>
         </a>

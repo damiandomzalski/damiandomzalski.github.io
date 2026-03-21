@@ -4,20 +4,32 @@ function About({ data }) {
   const sectionRef = useRef(null);
 
   useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const fallbackTimer = setTimeout(() => {
+      if (el && !el.classList.contains("visible")) {
+        el.classList.add("no-observer");
+      }
+    }, 2000);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+            clearTimeout(fallbackTimer);
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.05, rootMargin: "0px 0px -50px 0px" }
     );
 
-    const el = sectionRef.current;
-    if (el) observer.observe(el);
-    return () => { if (el) observer.unobserve(el); };
+    observer.observe(el);
+    return () => {
+      clearTimeout(fallbackTimer);
+      observer.unobserve(el);
+    };
   }, []);
 
   if (!data) return null;

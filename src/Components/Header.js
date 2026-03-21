@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const MailIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -15,13 +15,25 @@ const GithubIcon = () => (
 );
 
 function Header({ data }) {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    // Use requestAnimationFrame to ensure the DOM has painted first,
+    // then add animation class. This ensures content is visible by default
+    // and animations are a progressive enhancement.
+    const raf = requestAnimationFrame(() => {
+      setAnimate(true);
+    });
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
   if (!data) return null;
 
   const { name, occupation, description, email, image } = data;
   const profilePic = `${process.env.PUBLIC_URL}/images/${image}`;
 
   return (
-    <header className="hero" id="home">
+    <header className={`hero ${animate ? "hero-animate" : ""}`} id="home">
       <div className="hero-glow hero-glow-1"></div>
       <div className="hero-glow hero-glow-2"></div>
 

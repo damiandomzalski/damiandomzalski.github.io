@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./Components/Header";
+import Highlights from "./Components/Highlights";
 import Projects from "./Components/Projects";
 import About from "./Components/About";
 import Footer from "./Components/Footer";
+import Nav from "./Components/Nav";
 
 function App() {
   const [resumeData, setResumeData] = useState(null);
@@ -32,7 +34,9 @@ function App() {
 
   return (
     <div className="App">
+      <Nav />
       <Header data={resumeData?.main} />
+      <Highlights data={resumeData?.main} />
       <Projects data={resumeData?.main} />
       <About data={resumeData?.main} />
       <Footer data={resumeData?.main} />

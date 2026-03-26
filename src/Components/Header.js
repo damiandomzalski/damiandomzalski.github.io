@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 
 const MailIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -16,16 +16,73 @@ const GithubIcon = () => (
 
 function Header({ data }) {
   const [animate, setAnimate] = useState(false);
+  const heroRef = useRef(null);
+  const glow1Ref = useRef(null);
+  const glow2Ref = useRef(null);
+
+  // Cursor-following glow effect
+  const handleMouseMove = useCallback((e) => {
+    if (!heroRef.current) return;
+    const rect = heroRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const pctX = (x / rect.width) * 100;
+    const pctY = (y / rect.height) * 100;
+
+    if (glow1Ref.current) {
+      glow1Ref.current.style.left = `${pctX - 15}%`;
+      glow1Ref.current.style.top = `${pctY - 15}%`;
+    }
+    if (glow2Ref.current) {
+      glow2Ref.current.style.left = `${pctX + 5}%`;
+      glow2Ref.current.style.top = `${pctY + 10}%`;
+    }
+  }, []);
+
+  // Magnetic button effect
+  const handleBtnMouseMove = useCallback((e) => {
+    const btn = e.currentTarget;
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+  }, []);
+
+  const handleBtnMouseLeave = useCallback((e) => {
+    e.currentTarget.style.transform = '';
+  }, []);
 
   useEffect(() => {
-    // Use requestAnimationFrame to ensure the DOM has painted first,
-    // then add animation class. This ensures content is visible by default
-    // and animations are a progressive enhancement.
     const raf = requestAnimationFrame(() => {
       setAnimate(true);
     });
+
+    // Only enable cursor effects on non-touch devices
+    const isTouchDevice = window.matchMedia('(hover: none)').matches;
+    const hero = heroRef.current;
+
+    if (!isTouchDevice && hero) {
+      hero.addEventListener('mousemove', handleMouseMove);
+
+      // Magnetic buttons
+      const btns = hero.querySelectorAll('.btn');
+      btns.forEach(btn => {
+        btn.addEventListener('mousemove', handleBtnMouseMove);
+        btn.addEventListener('mouseleave', handleBtnMouseLeave);
+      });
+
+      return () => {
+        cancelAnimationFrame(raf);
+        hero.removeEventListener('mousemove', handleMouseMove);
+        btns.forEach(btn => {
+          btn.removeEventListener('mousemove', handleBtnMouseMove);
+          btn.removeEventListener('mouseleave', handleBtnMouseLeave);
+        });
+      };
+    }
+
     return () => cancelAnimationFrame(raf);
-  }, []);
+  }, [handleMouseMove, handleBtnMouseMove, handleBtnMouseLeave]);
 
   if (!data) return null;
 
@@ -33,13 +90,20 @@ function Header({ data }) {
   const profilePic = `${process.env.PUBLIC_URL}/images/${image}`;
 
   return (
-    <header className={`hero ${animate ? "hero-animate" : ""}`} id="home">
-      <div className="hero-glow hero-glow-1"></div>
-      <div className="hero-glow hero-glow-2"></div>
+    <header className={`hero ${animate ? "hero-animate" : ""}`} id="home" ref={heroRef}>
+      <div className="hero-glow hero-glow-1" ref={glow1Ref}></div>
+      <div className="hero-glow hero-glow-2" ref={glow2Ref}></div>
+      <div className="hero-noise"></div>
 
       <div className="hero-text">
         <span className="hero-label">Software Engineer & Builder</span>
-        <h1 className="hero-name">{name}</h1>
+        <h1 className="hero-name">
+          {name.split(' ').map((word, i) => (
+            <span key={i} className="hero-name-word">
+              {word}{i < name.split(' ').length - 1 ? '\u00A0' : ''}
+            </span>
+          ))}
+        </h1>
         <h2 className="hero-title">{occupation}</h2>
         <p className="hero-description">{description}</p>
 

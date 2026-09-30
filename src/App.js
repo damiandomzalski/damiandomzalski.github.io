@@ -4,7 +4,6 @@ import Header from "./Components/Header";
 import Highlights from "./Components/Highlights";
 import Projects from "./Components/Projects";
 import Experience from "./Components/Experience";
-import Repos from "./Components/Repos";
 import About from "./Components/About";
 import Footer from "./Components/Footer";
 import Nav from "./Components/Nav";
@@ -41,7 +40,6 @@ function App() {
       <Highlights data={resumeData?.main} />
       <Projects data={resumeData?.main} />
       <Experience data={resumeData?.main} />
-      <Repos />
       <About data={resumeData?.main} />
       <Footer data={resumeData?.main} />
     </div>

@@ -41,7 +41,7 @@ function About({ data }) {
     <section className="about" id="about">
       <div className="about-container section-enter" ref={sectionRef}>
         <div className="section-header">
-          <span className="section-number">04 &mdash; About</span>
+          <span className="section-number">03 &mdash; About</span>
           <h2 className="section-title">Who I Am</h2>
           <div className="section-divider"></div>
         </div>

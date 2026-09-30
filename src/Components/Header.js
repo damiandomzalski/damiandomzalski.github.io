@@ -1,3 +1,4 @@
+import HeroCanvas from "./HeroCanvas";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 
 const MailIcon = () => (
@@ -16,6 +17,13 @@ const GithubIcon = () => (
 
 function Header({ data }) {
   const [animate, setAnimate] = useState(false);
+  const [roleIdx, setRoleIdx] = useState(0);
+  const roles = ["Ruby on Rails engineer", "Data pipeline builder", "AI product founder", "Remote team leader"];
+
+  useEffect(() => {
+    const id = setInterval(() => setRoleIdx((i) => (i + 1) % roles.length), 2600);
+    return () => clearInterval(id);
+  }, [roles.length]);
   const heroRef = useRef(null);
   const glow1Ref = useRef(null);
   const glow2Ref = useRef(null);
@@ -93,10 +101,14 @@ function Header({ data }) {
     <header className={`hero ${animate ? "hero-animate" : ""}`} id="home" ref={heroRef}>
       <div className="hero-glow hero-glow-1" ref={glow1Ref}></div>
       <div className="hero-glow hero-glow-2" ref={glow2Ref}></div>
+      <HeroCanvas />
       <div className="hero-noise"></div>
 
       <div className="hero-text">
-        <span className="hero-label">Software Engineer & Builder</span>
+        <span className="hero-label">
+          <span className="hero-status"></span>
+          Available for interesting projects
+        </span>
         <h1 className="hero-name">
           {name.split(' ').map((word, i) => (
             <span key={i} className="hero-name-word">
@@ -104,7 +116,10 @@ function Header({ data }) {
             </span>
           ))}
         </h1>
-        <h2 className="hero-title">{occupation}</h2>
+        <h2 className="hero-title">
+          {occupation}
+          <span className="hero-role" key={roleIdx}>{roles[roleIdx]}</span>
+        </h2>
         <p className="hero-description">{description}</p>
 
         <div className="hero-cta">

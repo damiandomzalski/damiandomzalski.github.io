@@ -4,11 +4,11 @@
     "occupation": "Senior Data & Software Engineer",
     "description": "Engineering data intelligence at Measure Studio. Building AI products — FirstVibe.app & FlashFeed.club.",
     "image": "profilepic.jpg",
-    "bio": "I'm a software engineer who thrives at the intersection of data and product. At Measure Studio, I build the data pipelines and application features that power social media intelligence for major brands. On the side, I founded FirstVibe.app — an AI-powered platform that turns selfies into honest vibe scores — and FlashFeed.club, an AI news aggregator that summarizes stories so you can swipe through the headlines. I care about clean architecture, thoughtful APIs, and shipping things that people actually use.",
+    "bio": "I'm a software engineer with 9 years of experience, rooted in the Ruby on Rails ecosystem and now working at the intersection of data and product. At Measure Studio I build the data pipelines and application features behind social media intelligence for major brands. Before that I worked as a Rails developer and team leader at Netguru. On the side I build and launch my own products — FirstVibe.app, FlashFeed.club, Elzora.pl and ZgadajmySie.co. My entire career has been remote, so I'm a proven remote teammate — and I still enjoy the occasional in-person sprint. Off the keyboard: swimming, basketball and martial arts.",
     "email": "contact@damiandomzalski.com",
     "phone": "",
     "website": "https://damiandomzalski.com",
-    "location": "Poland",
+    "location": "Reda, Poland · Remote",
     "social": [
       {
         "name": "LinkedIn",
@@ -48,25 +48,126 @@
         "role": "Senior Data & Software Engineer",
         "url": "https://measure.studio",
         "description": "Social media data intelligence platform trusted by top brands and agencies. I build data pipelines, analytics features, and the core application powering millions of data points daily.",
-        "tags": ["Data Pipelines", "Analytics", "Ruby on Rails", "React"],
-        "icon": "chart"
+        "tags": [
+          "Data Pipelines",
+          "Analytics",
+          "Ruby on Rails",
+          "React"
+        ],
+        "icon": "chart",
+        "image": "measure.jpg"
       },
       {
         "title": "FirstVibe.app",
         "role": "Founder",
         "url": "https://firstvibe.app",
-        "description": "Upload a selfie, get your honest vibe score in 30 seconds. AI-powered selfie analysis platform I built from zero to launch.",
-        "tags": ["AI/ML", "Computer Vision", "Full-Stack", "Product"],
-        "icon": "sparkle"
+        "description": "Upload a selfie, get your honest vibe score in 30 seconds. AI selfie analysis with 122K+ analyses across 144+ countries — built from zero to launch.",
+        "tags": [
+          "AI/ML",
+          "Computer Vision",
+          "Full-Stack",
+          "Product"
+        ],
+        "icon": "sparkle",
+        "image": "firstvibe.jpg"
       },
       {
         "title": "FlashFeed.club",
         "role": "Founder",
         "url": "https://flashfeed.club",
         "description": "AI summarizes the news, you swipe through the headlines. A bilingual news aggregator with card-based UX, 9 categories, emoji reactions, and personalized feeds.",
-        "tags": ["AI/ML", "News Aggregation", "Full-Stack", "Product"],
-        "icon": "bolt"
+        "tags": [
+          "AI/ML",
+          "News Aggregation",
+          "Full-Stack",
+          "Product"
+        ],
+        "icon": "bolt",
+        "image": "flashfeed.jpg"
       }
-    ]
+    ],
+    "stats": [
+      {
+        "value": "9+",
+        "label": "Years building web apps"
+      },
+      {
+        "value": "122K+",
+        "label": "Selfies analysed by FirstVibe"
+      },
+      {
+        "value": "144+",
+        "label": "Countries reached"
+      },
+      {
+        "value": "10M+",
+        "label": "Posts analysed at Measure Studio"
+      }
+    ],
+    "experience": [
+      {
+        "company": "Measure Studio",
+        "role": "Senior Data & Software Engineer",
+        "period": "Current",
+        "url": "https://measure.studio",
+        "description": "Data pipelines, analytics features and core application work for a social media intelligence platform used by top brands and agencies."
+      },
+      {
+        "company": "Founder — own products",
+        "role": "Founder & Builder",
+        "period": "Ongoing",
+        "url": "https://firstvibe.app",
+        "description": "Shipping products from zero to launch: FirstVibe.app (AI selfie analysis), FlashFeed.club (AI news aggregator), Elzora.pl and ZgadajmySie.co."
+      },
+      {
+        "company": "Netguru",
+        "role": "Ruby on Rails Developer & Team Leader",
+        "period": "Previous",
+        "url": "https://www.netguru.com",
+        "description": "Delivered scalable web applications for international clients and led remote development teams, combining hands-on Rails work with mentoring and delivery ownership."
+      }
+    ],
+    "skills": [
+      {
+        "group": "Backend",
+        "items": [
+          "Ruby",
+          "Ruby on Rails",
+          "REST APIs",
+          "PostgreSQL"
+        ]
+      },
+      {
+        "group": "Data",
+        "items": [
+          "Data pipelines",
+          "Analytics",
+          "ETL",
+          "Data modelling"
+        ]
+      },
+      {
+        "group": "Frontend",
+        "items": [
+          "React",
+          "JavaScript",
+          "HTML & CSS"
+        ]
+      },
+      {
+        "group": "Product & Leadership",
+        "items": [
+          "Team leadership",
+          "Remote collaboration",
+          "AI products",
+          "Shipping MVPs"
+        ]
+      }
+    ],
+    "education": {
+      "school": "Gdynia Maritime University",
+      "degree": "Bachelor's degree, IT Technology",
+      "period": "2014 — 2017"
+    }
   }
 }

@@ -176,9 +176,23 @@ function Projects({ data }) {
                 </div>
 
                 <div className="project-card-visual">
-                  <div className="project-icon-large">
-                    {IconComponent && <IconComponent />}
-                  </div>
+                  {project.image ? (
+                    <div className="browser-frame">
+                      <div className="browser-bar">
+                        <i></i><i></i><i></i>
+                        <span>{project.url.replace(/^https?:\/\//, "")}</span>
+                      </div>
+                      <img
+                        src={`${process.env.PUBLIC_URL}/images/projects/${project.image}`}
+                        alt={`${project.title} preview`}
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <div className="project-icon-large">
+                      {IconComponent && <IconComponent />}
+                    </div>
+                  )}
                 </div>
               </a>
             );
